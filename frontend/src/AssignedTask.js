@@ -3,7 +3,7 @@ import Header from './Header';
 import { getAssignedTasks } from './api';
 import "./TaskForm.css";
 import axios from 'axios';
-const API_URL = "http://localhost:5000/api"; 
+const API_URL = "https://task-manager-backend-1uzm.onrender.com"; 
 
 export default function AssignedTask() {
   const [tasks, setTasks] = useState([]);

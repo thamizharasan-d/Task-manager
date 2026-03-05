@@ -4,7 +4,7 @@ import Header from "./Header";
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
-const API_URL = "http://localhost:5000/api"; // change if your server URL is different
+const API_URL = "https://task-manager-backend-1uzm.onrender.com"; // change if your server URL is different
 
 function TaskForm() {
   const [title, setTitle] = useState("");
