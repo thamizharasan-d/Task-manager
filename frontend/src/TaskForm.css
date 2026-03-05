@@ -1,0 +1,260 @@
+.task-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 16px;
+  width: 100%;
+  background: transparent;
+  min-height: 100vh;
+  transform: scale(0.85);
+  opacity: 0;
+  animation: zoomIn 500ms ease forwards;
+}
+.title {
+  text-align: center;
+  color: aliceblue;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  transform: scale(0.85);
+  opacity: 0;
+  animation: zoomIn 450ms ease forwards;
+  margin: 8px 0 18px;
+    text-shadow:
+    0 0 5px #00f,
+    0 0 10px #f00,
+    0 0 15px #0ff;
+}
+.task-form {
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.input-field {
+  position: relative;
+  border: 3px solid transparent;
+  border-radius: 8px;
+  background:
+    linear-gradient(#0e2136, #0e2136) padding-box,
+    linear-gradient(305deg,#162dff, #ff0080,#ffc002,#2af598,#fd00df, #162dff) border-box;
+  background-size: 400% 400%;
+  color: #fff;
+  padding: 10px 12px;
+  transition: all 0.3s ease;
+  width: 95%;
+  max-width: 830px;
+  min-height: 50px;
+  font-size: 15px;
+  outline: none;
+}
+.input-textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+.input-field:focus {
+  animation: gradient-rotate 8s linear infinite;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.25);
+}
+.task-list:hover {
+  animation: gradient-rotate 8s linear infinite;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.25);
+}
+.help-text {
+  width: 95%;
+  max-width: 830px;
+  font-size: 12px;
+  color: rgba(255,255,255,0.8);
+  margin-top: -4px;
+  margin-bottom: 6px;
+}
+.field-label {
+  width: 95%;
+  max-width: 830px;
+  align-self: flex-start;
+  color: rgba(255,255,255,0.9);
+  font-size: 13px;
+  margin-left: calc((100% - 95%) / 2);
+}
+.btn-submit {
+  height: 52px;
+  width: 95%;
+  max-width: 830px;
+  margin-top: 6px;
+  font-weight: 700;
+  cursor: pointer;
+  background: linear-gradient(270deg, #162dff, #ff0080, #2af598,#fd00df,#162dff);
+  background-size: 800% 800%;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  letter-spacing: 0.5px;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  font-size: 16px;
+}
+.btn-submit:hover {
+  animation: gradientMove 5s ease infinite;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35);
+}
+.visually-hidden {
+  position: absolute !important;
+  height: 1px; width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
+}
+@keyframes zoomIn {
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+@keyframes gradient-rotate {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 400% 50%; }
+}
+@media (max-width: 480px) {
+  .title { font-size: 22px; }
+  .input-field { font-size: 14px; padding: 10px; min-height: 42px; }
+  .btn-submit { font-size: 15px; height: 48px; }
+  .help-text { font-size: 12px; }
+}
+.task-list {
+  width: 100%;
+  max-width: 900px;
+  margin-top: 30px;
+  padding: 10px;
+  color: white;
+  position: relative;
+  border: 3px solid transparent;
+  border-radius: 8px;
+  background:
+    linear-gradient(#0e2136, #0e2136) padding-box,
+    linear-gradient(305deg,#162dff, #ff0080,#ffc002,#2af598,#fd00df, #162dff) border-box;
+  background-size: 400% 400%;
+  color: #fff;
+  padding: 10px 12px;
+  transition: all 0.3s ease;
+  width: 95%;
+  max-width: 830px;
+  min-height: 44px;
+  font-size: 15px;
+  outline: none;
+}
+.list-title {
+  text-align: center;
+  color: aliceblue;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  transform: scale(0.85);
+  opacity: 0;
+  animation: zoomIn 450ms ease forwards;
+  margin: 8px 0 18px;
+      text-shadow:
+    0 0 5px #00f,
+    0 0 10px #f00,
+    0 0 15px #0ff;
+}
+.no-task {
+  text-align: center;
+  font-size: 14px;
+  color: rgba(255,255,255,0.7);
+}
+.task-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 12px;
+}
+.task-card {
+  background: rgba(14, 33, 54, 0.85);
+  border: 2px solid #2af598;
+  border-radius: 10px;
+  padding: 12px 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  animation: zoomIn 0.3s ease forwards;
+}
+.task-card h3 {
+  margin: 0 0 6px;
+  font-size: 18px;
+  color: #ffc002;
+}
+.btn-delete{
+  margin-left: 10px;
+  height: 40px;
+  width: 95%;
+  max-width: 80px;
+  margin-top: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  background: linear-gradient(270deg, #162dff, #ff0080, #2af598,#fd00df,#162dff);
+  background-size: 800% 800%;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  letter-spacing: 0.5px;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  font-size: 16px;
+}
+.btn-delete:hover {
+  animation: gradientMove 5s ease infinite;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35);
+}
+
+/* Edit panel styling (inline editor shown under a task) */
+.edit-panel {
+  background: linear-gradient(180deg, rgba(10,20,34,0.9), rgba(14,33,54,0.95));
+  border: 2px solid rgba(42,245,152,0.12);
+  border-radius: 10px;
+  padding: 14px;
+  box-shadow: 0 8px 20px rgba(2,6,23,0.55);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 100%;
+  animation: zoomIn 220ms ease;
+}
+
+/* Keep inputs inside edit panel full width and consistent with form inputs */
+.edit-panel .input-field {
+  width: 100%;
+  max-width: 100%;
+  min-height: 44px;
+  font-size: 14px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 2px solid rgba(255,255,255,0.03);
+  background:
+    linear-gradient(#071226, #071226) padding-box,
+    linear-gradient(305deg,#162dff, #ff0080,#ffc002,#2af598,#fd00df, #162dff) border-box;
+  background-size: 300% 300%;
+  color: #fff;
+  outline: none;
+}
+
+/* Heading inside edit panel */
+.edit-panel h4 {
+  margin: 0;
+  color: #ffc002;
+  font-size: 20px;
+}
+/* Responsive adjustments */
+@media (max-width: 520px) {
+  .edit-panel {
+    padding: 12px;
+    gap: 8px;
+  }
+  .edit-panel > div.actions,
+  .edit-panel > div[style] {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .btn-edit, .btn-cancel { width: 100%; }
+}

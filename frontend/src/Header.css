@@ -1,0 +1,140 @@
+.Header {
+    background-color: #0e2136;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100px;
+    border-bottom: 1px solid #2f3b4c;
+    padding: 0 20px;
+    position:relative;
+}
+
+/* left block: logo + title */
+#d1 {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+/* logo */
+#img {
+    height: 70px;
+    width: 70px;
+    margin-left: 0;
+}
+
+/* title */
+#he1 {
+    margin-left: 6px;
+    color: aliceblue;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    transform: scale(0.5);
+    opacity: 0;
+    animation: zoomIn 1s ease forwards;
+    text-shadow:
+        0 0 5px #00f,
+        0 0 10px #f00,
+        0 0 15px #00f,
+        0 0 20px #f00;
+    letter-spacing: 1px;
+}
+
+/* right block: greeting + logout */
+.greeting {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    white-space: nowrap;
+        margin-left: 6px;
+    color: aliceblue;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    transform: scale(0.5);
+    opacity: 0;
+    animation: zoomIn 1s ease forwards;
+    text-shadow:
+        0 0 5px #00f,
+        0 0 10px #f00,
+        0 0 15px #00f,
+        0 0 20px #f00;
+    letter-spacing: 1px;
+}
+
+/* greeting text */
+.greet-text {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: aliceblue;
+    font-size: 27px;
+    font-weight: 600;
+    text-shadow: 0 0 5px #00f, 0 0 10px #f00;
+}
+
+/* logout button (header-appropriate sizing) */
+#logbut {
+  height: 45px;
+  width: 95%;
+  max-width: 860px;
+  margin-top: 6px;
+  font-weight: 700;
+  font-size:smaller;
+  cursor: pointer;
+  background: linear-gradient(270deg, #162dff, #ff0080, #2af598,#fd00df,#162dff);
+  background-size: 800% 800%;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  letter-spacing: 0.5px;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  font-size: 16px;
+}
+#logbut:hover {
+  animation: gradientMove 5s ease infinite;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35);
+}
+@keyframes gradient-rotate {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 400% 50%; }
+}
+/* remove/ignore old hamburger/popup styles if unused */
+/* keyframes and responsiveness */
+@keyframes zoomIn {
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    #he1 {
+        font-size: 20px;
+        margin-left: 6px;
+    }
+    #img {
+        height: 50px;
+        width: 50px;
+    }
+    .greet-text {
+        font-size: 14px;
+    }
+    #logbut {
+        padding: 6px 10px;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 420px) {
+    .Header {
+        height: auto;
+        padding: 10px 12px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+    #d1 {
+        width: 100%;
+    }
+    .greeting {
+        width: 100%;
+        justify-content: flex-start;
+    }
+}

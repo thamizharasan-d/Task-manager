@@ -1,0 +1,278 @@
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 100px);
+  /*background-image: url('bg.png');background-size: cover;
+  background-position: center;*/
+}
+@keyframes backgroundAnimation {
+  0% {
+    background: linear-gradient(135deg, #0e2136, #152f4d);
+  }
+  100% {
+    background: linear-gradient(135deg, #1a3d5f, #0e2136);
+  }
+}
+.auth-form {
+  background: rgba(22, 44, 69, 0.9);
+  padding: 40px 30px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 420px;
+  color: white;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease forwards;
+
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.auth-form h2 {
+  margin-bottom: 20px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 26px;
+  text-shadow:
+    0 0 5px #00f,
+    0 0 10px #f00,
+    0 0 15px #0ff;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+@keyframes glow {
+  from {
+    text-shadow: 0 0 5px #00f, 0 0 10px #f00;
+  }
+  to {
+    text-shadow: 0 0 10px #0ff, 0 0 20px #f0f;
+  }
+}
+.auth-form input {
+  position: relative;
+  border: 3px solid transparent;
+  border-radius: 8px;
+  background:
+    linear-gradient(#0e2136, #0e2136) padding-box,
+    linear-gradient(305deg,#162dff, #ff0080,#ffc002,#2af598,#fd00df, #162dff) border-box;
+  background-size: 400% 400%;
+  color: #fff;
+  padding: 12px 15px;
+  margin: 12px 0;
+  width: 95%;
+  font-size: 16px;
+  outline: none;
+  transition: all 0.3s ease;
+  min-height: 48px;
+}
+.auth-form textarea {
+  min-height: 90px;
+  resize: vertical;
+  border: 3px solid transparent;
+  border-radius: 8px;
+  background:
+    linear-gradient(#0e2136, #0e2136) padding-box,
+    linear-gradient(305deg,#162dff, #ff0080,#ffc002,#2af598,#fd00df, #162dff) border-box;
+  background-size: 400% 400%;
+  color: #fff;
+  padding: 12px 15px;
+  font-size: 15px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+.auth-form input:focus,
+.auth-form textarea:focus {
+  animation: gradient-rotate 8s linear infinite;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.25);
+  transform: scale(1.02);
+}
+@keyframes gradient-rotate {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 400% 50%; }
+}
+.auth-form button {
+  height: 52px;
+  width: 95%;
+  max-width: 380px;
+  margin-top: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  background: linear-gradient(270deg, #162dff, #ff0080, #2af598,#fd00df,#162dff);
+  background-size: 800% 800%;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  letter-spacing: 0.5px;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  font-size: 16px;
+}
+.auth-form button:hover {
+  animation: gradientMove 5s ease infinite;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35);
+}
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.toggle-text {
+  margin-top: 15px;
+  font-size: 14px;
+  animation: fadeIn 1s ease;
+}
+
+.toggle-text a {
+  color: #00f;
+  cursor: pointer;
+  margin-left: 5px;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.toggle-text a:hover {
+  color: #0ff;
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@media (max-width: 480px) {
+  .auth-form {
+    padding: 30px 20px;
+  }
+  .auth-form h2 { font-size: 22px; }
+  .auth-form input { font-size: 14px; padding: 10px; min-height: 42px; }
+  .auth-form button { font-size: 15px; height: 48px; }
+}
+
+/* Role dropdown styles */
+.role-select {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 14px;
+  color: #333;
+  background: #fff;
+  border: 1px solid #d0d7de;
+  border-radius: 8px;
+  box-shadow: inset 0 1px 2px rgba(16,24,40,0.03);
+  appearance: none; /* remove native arrow on some browsers */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  transition: border-color .12s ease, box-shadow .12s ease, transform .06s ease;
+}
+
+/* Ensure the select fits the existing container spacing */
+.auth-form > div .role-select,
+.auth-form .role-select {
+  max-width: 380px;
+}
+
+/* Focus state */
+.role-select:focus {
+  outline: none;
+  border-color: #3b82f6; /* blue */
+  box-shadow: 0 0 0 4px rgba(59,130,246,0.12);
+}
+
+/* Optional: better-looking caret using background image (keeps native functionality) */
+.role-select {
+  background-image: linear-gradient(45deg, transparent 50%, #555 50%),
+                    linear-gradient(135deg, #555 50%, transparent 50%),
+                    linear-gradient(to right, #fff, #fff);
+  background-position: calc(100% - 18px) calc(1em + 2px), calc(100% - 13px) calc(1em + 2px), 0 0;
+  background-size: 6px 6px, 6px 6px, 100% 100%;
+  background-repeat: no-repeat;
+  padding-right: 36px; /* space for caret */
+}
+
+/* Dark-themed select to match the auth-form inputs */
+.role-select.dark,
+.auth-form .role-select {
+  width: 100%;
+  max-width: 380px;
+  font-size: 16px;
+  color: #565656;
+  border-radius: 8px;
+  border: 3px solid transparent;
+  padding: 12px 44px 12px 14px; /* space on right for caret */
+  background:
+    linear-gradient(#0e2136, #0e2136) padding-box,
+    linear-gradient(305deg,#162dff, #ff0080,#ffc002,#2af598,#fd00df, #162dff) border-box;
+  background-size: 400% 400%;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.25), inset 0 1px 2px rgba(255,255,255,0.02);
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  transition: all .25s ease;
+  outline: none;
+}
+
+/* Custom caret (white) using inline SVG so no external asset needed */
+.role-select.dark {
+  background-image:
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='white'><path d='M7 10l5 5 5-5z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: calc(100% - 14px) center;
+  background-origin: content-box;
+  padding-right: 48px;
+}
+
+/* Keep the animated gradient behavior on focus like other inputs */
+.role-select.dark:focus,
+.auth-form .role-select:focus {
+  animation: gradient-rotate 8s linear infinite;
+  transform: scale(1.02);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.35);
+  border-color: rgba(155,226,255,0.9);
+}
+
+/* Error state for validation */
+.role-select.error {
+  border-color: #ff4d4f;
+  box-shadow: 0 0 0 6px rgba(255,77,79,0.06);
+}
+
+/* Disabled state */
+.role-select:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Label and helper text */
+.auth-form label {
+  color: #cbe6ff;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14px;
+  text-align: left;
+}
+.role-help {
+  color: #9bd3ff;
+  font-size: 12px;
+  margin-top: 6px;
+  text-align: left;
+  max-width: 380px;
+}
+
+/* Responsive tweaks */
+@media (max-width: 480px) {
+  .role-select.dark,
+  .auth-form .role-select {
+    font-size: 14px;
+    padding: 10px 40px 10px 12px;
+  }
+}
